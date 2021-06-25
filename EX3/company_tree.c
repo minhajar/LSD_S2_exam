@@ -17,10 +17,14 @@ typedef struct      s_tree
 
 int                 calculate_subordinates(employee  *node)
 {
-    // write your code here
-    // You are giving a root of a tree, and you goal is to set numnber of 
-    // subordinates of each node, and set the value to the array subordinates
-    // the array indexing starting from 1.
+   if(node->right==NULL && node->left==NULL)
+       return 0;
+   if(node->left!=NULL)
+       return 1+calculate_subordinates(node->left);
+   if(node->right!=NULL)
+       return 1+calcualte_subordinates(node->right);
+   
+    
 }
 
 employee            *create_employees_tree(int *arr, int employee_num);
@@ -82,5 +86,5 @@ employee            *create_employees_tree(int *arr, int employee_num)
 
 void                test_program()
 {
-
+    
 }
