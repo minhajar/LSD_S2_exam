@@ -1,10 +1,11 @@
 #include <string.h>
 #include <stdlib.h>
+"include <stdio.h>
 
 char *reverse(char *input) {
     int len = strlen(input);
     char output[len];
-    for (int i = 1, i < len, i++) {
+    for (int i = 0; i < len; i++) {
         output[len - i - 1] = input[i];
     }
     return output;
